@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Caffe</title>
+    <!-- Static Load -->
+    <link rel="stylesheet" href="{% static '/css/import_style.css' %}"/>
+</head>
+
+<body>
+<div id="box">
+
+    <!-- Navigation Bar -->
+    <header class="header">
+
+        <nav class="nav">
+            <div>
+
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'index' %}">Home</a>
+                    {% if request.user.is_staff %}
+                        <a href="{% url 'create product' %}">Create product</a>
+                    {% endif %}
+
+                    </div>
+                    <div>
+                        <a href="{% url 'catalog' %}">Catalog</a>
+                        <a href="{% url 'purchase' request.user.id %}">Purchase</a>
+                    </div>
+                    <div>
+                        <a href="{% url 'profile details' request.user.id %}">Profile</a>
+                        <a href="{% url 'logout' request.user.id %}">Logout</a>
+                    </div>
+                {% endif %}
+        </nav>
+        {% if not request.user.is_authenticated %}
+            <div class="not_auth">
+                <ul class="not_auth_items">
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login user' %}">Login</a></li>
+                </ul>
+            </div>
+        {% endif %}
+    </header>
+
+    <!-- End Navigation Bar -->
+
+    {% block block_content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        <div>
+
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+</div>
+</body>
+</html>
