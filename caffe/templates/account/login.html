@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+{% block block_content %}
+    {% load static %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ssttrano</title>
+        <link rel="stylesheet" href='{% static '/css/style.css' %}'>
+    </head>
+
+    <div class="parallax_1">
+        <section class="card-box">
+
+            <form method="POST" action="{% url 'login user' %}">
+                <fieldset>
+                    <legend>Profile</legend>
+                    <div class="container-login">
+                        {{ form }}
+                        {% csrf_token %}
+                        <button class="add-user" type="submit">Enter</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+    </div>
+
+
+    <div class="content_1">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo hic sunt
+            fugit voluptas</p>
+    </div>
+    <div class="parallax_2"></div>
+    <div class="content_2">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
+        </p>
+    </div>
+    </html>
+
+{% endblock %}

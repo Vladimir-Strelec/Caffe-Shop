@@ -1,0 +1,71 @@
+{% extends 'base/base.html' %}
+{% block block_content %}
+
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ssttrano</title>
+        <link rel="stylesheet" href='{% static '/css/profile_details.css' %}'>
+    </head>
+
+    <div class="parallax_1">
+    <section id="detailsPage">
+        <div class="card-box">
+            <fieldset>
+                <h3>Total money {{ total_money|floatformat:2 }}$</h3>
+            </fieldset>
+        </div>
+    </section>
+        {% for object in products %}
+
+        <section id="detailsPage">
+
+            <div class="card-box">
+            <fieldset>
+                <div class="row-form-errors">
+                    <!-- Album Image -->
+                    <img src="{{ object.product.image.url }}" height="300" width="350" alt="Cover Image">
+                </div>
+
+                <div class="albumInfo">
+
+                    <div class="albumText">
+                        <!-- Album Info -->
+                        <h1>{{ object.product.name }}</h1>
+                        <h2>Price: ${{ object.product.price|floatformat:2 }}</h2>
+                        <h3>Remains: {{ object.product.remains|floatformat:2 }}</h3>
+                        <div class="actionBtn"><a href="{% url 'info product' object.product.pk %}" class="edit">Info</a></div>
+                    </div>
+
+                    <div class="actionBtn">
+                        <!-- Album Buttons -->
+                        {% if request.user.is_staff or request.user.is_superuser%}
+                            <a href="{% url 'edit product' object.product_id %}" class="edit">Edit</a>
+
+                            <a href="{% url 'add comment' object.product_id %}" class="edit">Comment</a>
+                        {% endif %}
+                            <a href="{% url 'clear purchase' object.pk %}" class="edit">Clear</a>
+                    </div>
+                </div>
+            </fieldset>
+            </div>
+
+        </section>
+        {% endfor %}
+
+    <div class="content_1">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo hic sunt exercitationem repellendus nesciunt fugit voluptas reprehenderit quibusdam, qui labore, iste asperiores. Similique tenetur, quia earum ut natus. Reiciendis odit quis alias totam, facilis a nemo, fugit laborum quod, enim dicta eaque voluptatem itaque nam vero laudantium, voluptas odio ullam.</p>
+    </div>
+    </div>
+    <div class="content_2">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo hic sunt exercitationem repellendus nesciunt fugit voluptas reprehenderit quibusdam, qui labore, iste asperiores. Similique tenetur, quia earum ut natus. Reiciendis odit quis alias totam, facilis a nemo, fugit laborum quod, enim dicta eaque voluptatem itaque nam vero laudantium, voluptas odio ullam.</p>
+    </div>
+    <div class="parallax_2">
+    </div>
+
+    </html>
+
+{% endblock %}
