@@ -133,5 +133,3 @@ class ClearPurchaseTable(LoginRequiredMixin, DeleteView):
     queryset = Cart.objects.all()
     form_class = ClearProductsUser
     success_url = reverse_lazy('catalog')
-
-# xxx

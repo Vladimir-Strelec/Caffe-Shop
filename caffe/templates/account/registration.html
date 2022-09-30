@@ -13,21 +13,16 @@
     </head>
 
     <div class="parallax_1">
-        <section class="card-box">
+        <div class="add-user">
+            <form class="row-form-errors" method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+                <legend>Registration</legend>
 
-            <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
-                <fieldset>
-                    <legend>Registration</legend>
-                    <div class="container">
-                        {{ form }}
-                        {% csrf_token %}
-                        <button class="add-user" type="submit">Registration</button>
-                    </div>
-                </fieldset>
+                {{ form }}
+                {% csrf_token %}
+                <button class="a-header" type="submit">Registration</button>
+
             </form>
-
-        </section>
-
+        </div>
     </div>
     <div class="content_1">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo hic sunt exercitationem repellendus nesciunt

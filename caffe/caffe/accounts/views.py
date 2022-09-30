@@ -25,7 +25,7 @@ class UserRegisterView(RedirectToCatalog, views.CreateView):
 
 class UserLoginView(auth_views.LoginView):
     template_name = 'account/login.html'
-    success_url = reverse_lazy('catalog')
+    success_url = reverse_lazy('index')
 
     def get_success_url(self):
         if self.success_url:

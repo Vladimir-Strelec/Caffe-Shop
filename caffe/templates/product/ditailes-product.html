@@ -8,52 +8,50 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ssttrano</title>
-        <link rel="stylesheet" href='{% static '/css/style4.css' %}'>
+        <link rel="stylesheet" href='{% static '/css/style.css' %}'>
     </head>
-
-         <section class="card-box">
-                <div class="row-form-errors">
-                    <img src="{{ object.image.url }}" height="500 %" alt="#">
-                </div>
-         </section>
-
+    <div class="parallax_1">
         <section class="card-box">
-        <fieldset>
-        <div class="albumInfo">
-                <div class="profileText">
-                     <div class="albumText">
-                        <!-- Album Info -->
-                        <h1>Name: {{ object.name }}</h1>
-                        <h2>Price: ${{ object.price|floatformat:2 }}</h2>
-                        <h3>Remains: {{ object.remains }}</h3>
-                        <div>Info: <p>{{ object.product_info }}</p></div>
 
-                                <a href="{% url 'cart' object.id %}" class="remove">
-                                    <form method="POST" action="{% url 'cart' object.id %}" enctype="multipart/form-data">
-                                        {% csrf_token %}
-                                        {{ form }}
-                                        <button class="add-album" style="border: 2px solid seashell;" type="submit">Purchase</button>
-                                    </form>
-                                </a>
+            <fieldset>
+            <h2>{{ object.name }}</h2>
+                <img src="{{ object.image.url }}" width="320" height="290" alt="Cover Image">
 
-                         <div class="actionBtn">
-                             <a href="{% url 'all comment' object.id %}" class="remove">Comments</a>
-                        </div>
+                <div class="action-checkbox-column">
+                    <h2>Price: ${{ object.price|floatformat:2 }}</h2>
+                    <h3>Count: {{ object.remains|floatformat:2 }}</h3>
+                    <div class="actionBtn"><a href="{% url 'info product' object.pk %}" class="add-user">Info</a>
                     </div>
                 </div>
-        </div>
-        </fieldset>
-        </section>
-    <div class="parallax_1">
 
+                {% if permission_required %}
+                    <a href="{% url 'edit product' object.pk %}" class="add-user">Edit</a>
+                    <a href="{% url 'delete product' object.pk %}" class="add-user">Delete</a>
+                {% endif %}
+                <a href="{% url 'add comment' object.id %}" class="add-user">Comment</a>
+
+                <a href="{% url 'all comment' object.id %}" class="add-user">Comments</a>
+                <form method="POST" action="{% url 'cart' object.id %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button class="button" type="submit"><h3>Purchase</h3></button>
+                </form>
+            </fieldset>
+        </section>
     </div>
-        <div class="content_1">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo hic sunt exercitationem repellendus nesciunt fugit voluptas reprehenderit quibusdam, qui labore, iste asperiores. Similique tenetur, quia earum ut natus. Reiciendis odit quis alias totam, facilis a nemo, fugit laborum quod, enim dicta eaque voluptatem itaque nam vero laudantium, voluptas odio ullam.</p>
-        </div>
+    <div class="content_1">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo hic sunt exercitationem repellendus
+            nesciunt fugit voluptas reprehenderit quibusdam, qui labore, iste asperiores. Similique tenetur, quia
+            earum ut natus. Reiciendis odit quis alias totam, facilis a nemo, fugit laborum quod, enim dicta eaque
+            voluptatem itaque nam vero laudantium, voluptas odio ullam.</p>
+    </div>
 
     <div class="parallax_2"></div>
     <div class="content_2">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo hic sunt exercitationem repellendus nesciunt fugit voluptas reprehenderit quibusdam, qui labore, iste asperiores. Similique tenetur, quia earum ut natus. Reiciendis odit quis alias totam, facilis a nemo, fugit laborum quod, enim dicta eaque voluptatem itaque nam vero laudantium, voluptas odio ullam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo hic sunt exercitationem repellendus nesciunt
+            fugit voluptas reprehenderit quibusdam, qui labore, iste asperiores. Similique tenetur, quia earum ut natus.
+            Reiciendis odit quis alias totam, facilis a nemo, fugit laborum quod, enim dicta eaque voluptatem itaque nam
+            vero laudantium, voluptas odio ullam.</p>
     </div>
     </html>
 
