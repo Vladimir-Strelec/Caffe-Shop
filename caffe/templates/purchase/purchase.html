@@ -26,17 +26,15 @@
                 <div class="card-box">
                     <fieldset>
                         <div class="row-form-errors">
-                            <img src="{{ object.product.image.url }}" height="300" width="350" alt="Cover Image">
+                            <img src="{{ object.product.image.url }}" height=510px width="350" alt="Cover Image">
                         </div>
 
-                        <div class="albumInfo">
 
-                            <div class="action-checkbox">
                                 <!-- Album Info -->
                                 <h1>{{ object.product.name }}</h1>
                                 <h2>Price: ${{ object.product.price|floatformat:2 }}</h2>
                                 <h3>Remains: {{ object.product.remains|floatformat:2 }}</h3>
-                            </div>
+
                             <a href="{% url 'info product' object.product.pk %}" class="add-user">Info</a>
                             {% if request.user.is_staff or request.user.is_superuser %}
                                 <a href="{% url 'edit product' object.product_id %}" class="add-user">Edit</a>
@@ -45,7 +43,6 @@
                             {% endif %}
                             <a href="{% url 'clear purchase' object.pk %}" class="add-user">Clear</a>
 
-                        </div>
                     </fieldset>
                 </div>
 

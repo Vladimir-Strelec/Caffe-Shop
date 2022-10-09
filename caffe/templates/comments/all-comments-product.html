@@ -18,19 +18,18 @@
                 <div class="card-box">
                     <fieldset>
 
-                            {% if comment.user.profile.picture %}
-                                <img src="{{ comment.user.profile.picture.url }}" height="250" alt="Cover Image">
-                            {% else %}
-                                <img src="https://www.afsafi.com/wp-content/uploads/2013/04/social-hub-profile-default.jpg"
-                                     height="250" alt="Cover Image">
-                            {% endif %}
+                        {% if comment.user.profile.picture %}
+                            <img src="{{ comment.user.profile.picture.url }}" height=510px alt="Cover Image">
+                        {% else %}
+                            <img src="https://www.afsafi.com/wp-content/uploads/2013/04/social-hub-profile-default.jpg"
+                                 height=310px alt="Cover Image">
+                        {% endif %}
 
                         <h3>{{ comment.user }}</h3>
                     </fieldset>
-
-                    <div class="action-checkbox">
-                        <div> {{ comment.text }}</div>
-                    </div>
+                </div>
+                <div class="add-user">
+                    <h3> {{ comment.text }}</h3>
                 </div>
             {% endfor %}
         </ul>

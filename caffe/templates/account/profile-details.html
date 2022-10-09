@@ -16,10 +16,10 @@
         <section id="card-box">
             <fieldset>
                 {% if object.picture %}
-                    <img src="{{ object.picture.url }}" height="290" alt="#">
+                    <img src="{{ object.picture.url }}" width=110px height=300px alt="#">
                 {% else %}
                     <img src="https://www.afsafi.com/wp-content/uploads/2013/04/social-hub-profile-default.jpg"
-                         width="290" alt="#">
+                         width=110px height=300px alt="#">
                 {% endif %}
                     <a href="{% url 'edit profile' request.user.id %}" class="add-user">Edit</a>
                     <a href="{% url 'change password' request.user.id %}" class="add-user">Password</a>

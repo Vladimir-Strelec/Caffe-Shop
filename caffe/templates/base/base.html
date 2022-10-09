@@ -19,20 +19,20 @@
                 {% if request.user.is_staff %}
                     <a class="a-header" href="{% url 'create product' %}">Create product</a>
                 {% endif %}
-                <a class="a-header" href="{% url 'catalog' %}">Catalog</a>
-                <a class="a-header" href="{% url 'purchase' request.user.id %}">Purchase</a>
+{#                <a class="a-header" href="{% url 'catalog' %}">Catalogue</a>#}
+                <a class="a-header" href="{% url 'purchase' request.user.id %}">Purchases</a>
             </div>
-            <div>
+            <div class="profile_logout_nav">
                 <a class="a-header" href="{% url 'profile details' request.user.id %}">Profile</a>
                 <a class="a-header" href="{% url 'logout' request.user.id %}">Logout</a>
             </div>
             </div>
-
+        {% endif %}
             {% if not request.user.is_authenticated %}
                 <a class="a-header" href="{% url 'register' %}">Register</a>
                 <a class="a-header" href="{% url 'login user' %}">Login</a>
             {% endif %}
-        {% endif %}
+
 
 </header>
 

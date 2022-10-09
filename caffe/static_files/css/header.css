@@ -1,6 +1,6 @@
 header {
     display: flex;
-    max-width: 1960px;
+    min-width: 320px;
 
     flex-flow: row;
     justify-content: space-between;
@@ -13,9 +13,9 @@ header {
 
 }
 
-nav {
+.nav {
     display: flex;
-    width: 320px;
+    width: 100%;
 
     flex-flow: row;
     justify-content: space-between;
@@ -23,13 +23,20 @@ nav {
 
 .last-nav {
     display: flex;
-    width: 320px;
+    width: 100%;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: start;
 }
 
+.profile_logout_nav {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
 
 img {
+    min-width: 300px;
+    max-width: 600px;
     border-radius: 15px;
     box-shadow: 2px 2px 2px 1px #0B0C10;
 }
@@ -69,7 +76,8 @@ li {
 
 .a-header {
     min-height: 30px;
-    width: 100px;
+    max-width: 100px;
+    min-width: 65px;
     flex: 0 1 auto;
     flex-direction: column;
     justify-content: center;
