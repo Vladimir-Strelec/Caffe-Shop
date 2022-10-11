@@ -13,20 +13,19 @@
 
     <div class="parallax_1">
         <section class="card-box">
+            <fieldset>
+                <form method="POST" action="{% url 'add comment' id_product %}">
 
-            <form method="POST" action="{% url 'add comment' id_product %}">
-                <fieldset>
                     <legend>Add Comment</legend>
-                    <div class="container">
-                        {{ form }}
-                        {% csrf_token %}
 
-                        <button class="button" type="submit">Your review</button>
+                    {{ form }}
+                    {% csrf_token %}
 
-                    </div>
-                </fieldset>
-            </form>
+                    <button class="button" type="submit">Your review</button>
 
+
+                </form>
+            </fieldset>
         </section>
     </div>
     <div class="content_1">

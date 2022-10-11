@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@localhost" uuid="4ae49f6d-1199-486d-b1de-6985cc40a653">
+    <data-source source="LOCAL" name="db4ckn8mscqb0b@ec2-54-228-218-84.eu-west-1.compute.amazonaws.com" uuid="116ac70f-49d4-424b-806a-7695360c6809">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://ec2-54-228-218-84.eu-west-1.compute.amazonaws.com:5432/db4ckn8mscqb0b</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="new_file" uuid="f43ae43d-a01e-4e9b-9e60-a16ac70bf17e">
+    <data-source source="LOCAL" name="new_file" uuid="ecce2dbb-5c00-4a58-bf22-e4033e1d2ab7">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/new_file</jdbc-url>
+      <jdbc-url>jdbc:sqlite:E:\Python_framework\caffe\new_file</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.39.2/sqlite-jdbc-3.39.2.jar</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>

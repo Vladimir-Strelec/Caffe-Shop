@@ -12,41 +12,36 @@
     </head>
 
     <div class="parallax_1">
-        <section id="detailsPage">
-            <div class="card-box">
-                <fieldset>
-                    <h3>Total money {{ total_money|floatformat:2 }}$</h3>
-                </fieldset>
-            </div>
-        </section>
+
+        <div class="card-box">
+            <fieldset>
+                <h3>Total money {{ total_money|floatformat:2 }}$</h3>
+            </fieldset>
+        </div>
+
         {% for object in products %}
-
-            <section id="detailsPage">
-
-                <div class="card-box">
-                    <fieldset>
-                        <div class="row-form-errors">
-                            <img src="{{ object.product.image.url }}" height=510px width="350" alt="Cover Image">
-                        </div>
+            <section class="card-box">
+                <fieldset>
+                    <img src="{{ object.product.image.url }}" height=300px width="350" alt="Cover Image">
 
 
-                                <!-- Album Info -->
-                                <h1>{{ object.product.name }}</h1>
-                                <h2>Price: ${{ object.product.price|floatformat:2 }}</h2>
-                                <h3>Remains: {{ object.product.remains|floatformat:2 }}</h3>
+                    <!-- Album Info -->
+                    <h3>{{ object.product.name }}</h3>
+                    <h3>Price: ${{ object.product.price|floatformat:2 }}</h3>
+                    <h3>Remains: {{ object.product.remains|floatformat:2 }}</h3>
 
-                            <a href="{% url 'info product' object.product.pk %}" class="add-user">Info</a>
-                            {% if request.user.is_staff or request.user.is_superuser %}
-                                <a href="{% url 'edit product' object.product_id %}" class="add-user">Edit</a>
+                    <a href="{% url 'info product' object.product.pk %}" class="add-user">Info</a>
+                    {% if request.user.is_staff or request.user.is_superuser %}
+                        <a href="{% url 'edit product' object.product_id %}" class="add-user">Edit</a>
 
-                                <a href="{% url 'add comment' object.product_id %}" class="add-user">Comment</a>
-                            {% endif %}
-                            <a href="{% url 'clear purchase' object.pk %}" class="add-user">Clear</a>
+                        <a href="{% url 'add comment' object.product_id %}" class="add-user">Comment</a>
+                    {% endif %}
+                    <a href="{% url 'clear purchase' object.pk %}" class="add-user">Clear</a>
 
-                    </fieldset>
-                </div>
-
+                </fieldset>
             </section>
+
+
         {% endfor %}
     </div>
     <div class="content_1">

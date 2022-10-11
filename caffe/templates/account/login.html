@@ -12,15 +12,17 @@
     </head>
 
     <div class="parallax_1">
-        <div class="add-user">
-            <form class="form-control" method="POST" action="{% url 'login user' %}">
-                <legend>Profile</legend>
+        <div class="card-box">
+            <fieldset>
+                <form class="row-form-errors" method="POST" action="{% url 'login user' %}">
+                    <legend>Profile</legend>
 
                     {{ form }}
                     {% csrf_token %}
                     <button class="a-header" type="submit">Enter</button>
 
-            </form>
+                </form>
+            </fieldset>
         </div>
     </div>
     <div class="content_1">
