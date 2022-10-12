@@ -1,7 +1,7 @@
 ![Header](https://thumbs.gfycat.com/AdmirableEvergreenDoe-size_restricted.gif)
 ___
 # Django_Flashcards:nerd_face:
-[![Flutter](https://img.shields.io/badge/-Link_to_this_app_on_heroku-000000?style=for-the-badge&)](https://webgame198890201.herokuapp.com/)
+[![Flutter](https://img.shields.io/badge/-Link_to_this_app_on_heroku-000000?style=for-the-badge&)](https://caffe-shop.herokuapp.com/)
 ___
 ## *Languages and tools*
 
